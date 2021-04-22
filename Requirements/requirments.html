@@ -1,0 +1,655 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Frontend Engineer Task</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="89f51f5a-1442-40d1-8a25-da36f7de09bd" class="page sans"><header><img class="page-cover-image" src="Frontend%20Engineer%20Task%2089f51f5a144240d18a25da36f7de09bd/manush_tech_2_samples-02_(1).png" style="object-position:center 50%"/><h1 class="page-title">Frontend Engineer Task</h1></header><div class="page-body"><h2 id="d4e550d6-026c-4345-b402-3ed3524e47fc" class=""><mark class="highlight-blue"><strong>Purpose </strong></mark></h2><p id="3a43c8c4-67b1-456c-b4b8-3d900a6dfffd" class="">Thank you for your interest in joining our team as a ‘Frontend Engineer’. The core purpose of this take home assignment is our need to evaluate the following in a particular applicant :</p><ul id="dc56f0ab-0943-4359-ad7d-1089a7cf42b4" class="bulleted-list"><li>How well candidates can think and solve problems they are presented with</li></ul><ul id="9f669836-6a83-4705-a34a-679c1627af51" class="bulleted-list"><li>How competent and skilled the candidates are at building scalable software systems, in terms of<ul id="86ec06a7-67f6-4de7-a896-1b404f254866" class="bulleted-list"><li>Scalability in terms of software design</li></ul><ul id="9e1afbd9-a84d-4985-857f-4d302098140d" class="bulleted-list"><li>Scalability in terms of root-level performance</li></ul><ul id="8640ac9e-efff-43ac-8a49-cf4f0d2b9824" class="bulleted-list"><li>Scalability in terms of readability and maintainability</li></ul></li></ul><p id="b5088970-88b0-47ce-b4df-922653ec22cc" class="">We appreciate you and your time that you will be putting into building the solution.</p><hr id="38cdbade-8930-4a8c-aaad-bcad0f794d64"/><h2 id="f1f032ee-8fca-45cb-aedc-824b3ad434a8" class=""><mark class="highlight-blue">Task</mark></h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0e7216b2-5493-42f7-8c41-e54db44cfade"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><mark class="highlight-yellow_background">IMPORTANT! You are to use React.js for this task. No frontend UI frameworks can be used.</mark></div></figure><p id="115de4d7-f886-4da4-89f1-0155c27d4c5b" class="">
+</p><p id="760dc881-7b96-46da-94ea-2d85d8f6ede2" class=""><em>Find the project folder already setup for you in the root of this folder. </em></p><p id="8e3aea29-d4ca-4d06-a47b-0ca01f8471bf" class="">
+</p><p id="a2559d16-4f30-4649-9ab1-8f0b0f70c32a" class="">You will be building a ‘<strong>Add to Cart &amp; Place Order’</strong> system for an e-commerce website. There will be a showcase of different products. You have to choose the products from this showcase and add them to the cart to place an order.</p><p id="5009df35-03ed-474c-b8a3-737250ae04d8" class="">
+</p><p id="afa1976e-c071-4462-a14b-03ec4a609386" class="">Here’s the specs from your project manager. You will be building the frontend for the above mentioned feature.</p><ol id="4c23c7d5-52a0-4fe9-86ac-08a4135aba1d" class="numbered-list" start="1"><li>The page layout is separated into 2 distinct sections:<ul id="2a40f57e-ae16-49b3-a360-c5850cde2102" class="bulleted-list"><li>Navbar - contains the logo of the company and the cart button.</li></ul><ul id="1267da8e-eff6-401e-8fae-96000fafdfca" class="bulleted-list"><li>Product Showcase - product cards are shown in grids.</li></ul></li></ol><ol id="55fd3daf-e5c5-4813-8184-655c5edd7570" class="numbered-list" start="2"><li>Cart - selected products show up here and the order total can be seen. The cart is hidden until a cart button is clicked. The cart should show up as a card from the right of the screen. Add a badge (count of products in the cart) to the cart-icon</li></ol><ol id="d08ed34e-57ee-420f-8eef-b0780680e552" class="numbered-list" start="3"><li>Product cards must contain the following:<ul id="93d51177-e032-44d0-8f16-2d10b008e962" class="bulleted-list"><li>image</li></ul><ul id="ab8e67dc-3588-4ba8-8927-0f8acf0c4e6b" class="bulleted-list"><li>title</li></ul><ul id="178d11bf-c79b-41f0-a78d-308f98e03dbb" class="bulleted-list"><li>price</li></ul><ul id="7c275b58-79b5-4593-8a92-b41ad381bba5" class="bulleted-list"><li>add to cart button which should convert into a quantity add/subtract button upon clicking.</li></ul></li></ol><ol id="137c4569-21e1-42a5-a3b8-93467483e70d" class="numbered-list" start="4"><li>Once a product is added to cart, the product must be displayed in the cart. The cart should contain the following:<ol id="414faa84-b3c0-420f-a6f1-7addf41aa671" class="numbered-list" start="1"><li>Cart Items<ul id="6393be32-7d3f-4d4e-b75a-a73e545ac081" class="bulleted-list"><li>selected quantity, it should have the ability to add or subtract quantity from right there.</li></ul><ul id="cb16ecab-78d9-4710-b72d-0222d926a205" class="bulleted-list"><li>Price of item.</li></ul><ul id="2782f0be-0b39-4622-8a4c-3bfc051213cc" class="bulleted-list"><li>Subtotal (Price x Quantity) for the particular item.</li></ul><ul id="60272c67-f311-495f-ad2d-cb8048614680" class="bulleted-list"><li>Delete symbol/button to remove the particular item.</li></ul></li></ol><ol id="feafab27-4766-4e9c-9329-3811bf3f893a" class="numbered-list" start="2"><li>Total invoiced amount for all the items summed together.</li></ol><ol id="940a1e52-48c2-48c1-8f9f-21808980a96b" class="numbered-list" start="3"><li>‘Checkout’ button to show a dummy modal saying ‘Your order has been placed!’.</li></ol><ol id="38400902-38c4-4ac9-a32a-c2cf965db2d9" class="numbered-list" start="4"><li>‘Clear Cart’ button to clear the entire cart selection.</li></ol></li></ol><ol id="3d1884d9-60da-4d9f-9ca6-19f395bb3b48" class="numbered-list" start="5"><li>Application should be responsive to DTM (Desktop, Tablet, Mobile)</li></ol><ol id="f7dfc67f-0e09-404a-9dbd-83154fa0d07b" class="numbered-list" start="6"><li><mark class="highlight-orange">[OPTIONAL]</mark> Add some sort of testing, might be unit tests/snapshot tests/integration tests etc</li></ol><p id="0c88d7ca-7f33-4668-92c8-4f58067902cf" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c03baa50-6b78-4e3c-84dd-26b013d5d22e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">It&#x27;s a small project but consider this as a part of a large project, so make sure you follow all sort of scalability, maintainability things while designing the application.</div></figure><p id="40bb73b6-55eb-4221-8f2a-047c5013f8fc" class="">
+</p><h3 id="804c7697-38f8-4e36-8969-b72d836ceb80" class=""><mark class="highlight-gray"><strong>API :</strong></mark></h3><p id="191699a3-4eb3-4c2e-b23f-684f9cfdad36" class="">
+</p><p id="90cf6fad-15ab-4388-a297-d81e2a14b7e0" class="">Here&#x27;s the API endpoint to <code>GET ALL Products</code></p><p id="c358acf3-61ca-463d-a432-fe3abdd9e03f" class=""><strong>Method :</strong> GET</p><p id="889a3e4d-933b-4283-8584-097757c6d155" class=""><strong>Route :</strong> <mark class="highlight-blue"><strong><a href="https://fakestoreapi.com/products">https://fakestoreapi.com/products</a></strong></mark></p><p id="04f71260-6c7a-4fa3-b936-ad81ade7dba6" class=""><strong>Example Response : </strong></p><p id="dd529468-9750-47a4-969c-239d35507cb7" class="">Status : <mark class="highlight-orange"><strong>200 OK</strong></mark></p><pre id="4c6b5fd6-baee-4119-b1f2-63e2f7192146" class="code code-wrap"><code>[
+    {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+        &quot;price&quot;: 109.95,
+        &quot;description&quot;: &quot;Your perfect pack for everyday use ...everyday&quot;,
+        &quot;category&quot;: &quot;men clothing&quot;,
+        &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg&quot;
+    },
+
+...
+
+    {
+        &quot;id&quot;: 20,
+        &quot;title&quot;: &quot;DANVOUY Womens T Shirt Casual Cotton Short&quot;,
+        &quot;price&quot;: 12.99,
+        &quot;description&quot;: &quot;95%Cotton,5%Spandex, Features: Casual, ...Winter.&quot;,
+        &quot;category&quot;: &quot;women clothing&quot;,
+        &quot;image&quot;: &quot;https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg&quot;
+    }
+]</code></pre><h3 id="382696ce-3ca5-4406-ac47-79dd68a417cc" class=""><mark class="highlight-gray"><strong>Other Resources:</strong></mark></h3><p id="e0486006-a3e2-4e69-baed-ba0168195e06" class="">You can find the reference mockups <a href="https://www.figma.com/file/37yR4Y5jRKkNt9Il9Qmayy/Frontend-Take-Home-Assignment-Mockups?node-id=0%3A1">here</a>. Your submission does not have to follow the exact style of the mockups, these are just to give you reference. Please feel free to be creative. Design UI in such a way that you actually empathize with the user and understand the pain points and solve those accordingly.</p><h2 id="c7d78973-82a7-42b6-8ecc-ca4282d771f7" class=""><mark class="highlight-blue"><strong>Submission</strong></mark></h2><p id="7150f76a-704f-4b4b-b0cb-2473ce66935b" class="">Please maintain a public GitHub repository for the assignment including a readme file documenting your work and how to set up your project. Deploy the application to <a href="https://www.heroku.com/">Heroku</a> / <a href="https://www.netlify.com/">Netlify</a> or anywhere and attach the public url/ip to the documentation. Once the task is complete, email us the link to your public repository at <mark class="highlight-blue"><em><strong><span style="border-bottom:0.05em solid">recruitment@manush.tech</span></strong></em></mark>. Deadline for submission is 23rd<strong> April 2021 (Friday), 6:00 PM</strong></p><p id="35b90553-34cf-4285-b3b2-c01f8b1fc385" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a727ecbb-266d-445e-b8a9-d43555c663b0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Feel free to ask if you have any confusions/queries before jumping into coding. We appreciate this 😊</div></figure><p id="fc826417-e6fd-4551-aa88-30f313488ec8" class="">
+</p></div></article></body></html>
