@@ -1,30 +1,25 @@
-## Getting Started
+# Introduction
+Ecommerce Web Application. Created using React.js. 
+Check [React Documentation](https://reactjs.org/docs/getting-started.html) for help.
 
-In the project directory, you can run:
+# Installation 
+At first clone the github repository to your local machine. 
+```
+git clone https://github.com/raadu/ecommerce-app
+```
 
-### `npm install`
+To run the app go to project directory and enter this command 
+```
+npm install
+npm start
+```
+or if you are using Yarn,
 
-Install necesary depenedcies and packages.
+```
+yarn install
+yarn start
+```
 
-### `npm start`
+* Port used 3000. App is displayed in localhost:3000. If the port 3000 is not free, it will prompt and ask to open in another port. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Demo Link: https://condescending-babbage-abc3ee.netlify.app
